@@ -1,0 +1,24 @@
+$color:red;
+$width:200px;
+.box{
+  width: 18px;
+  height: 20px;
+  background: $color;
+}
+.son{
+  width: $width;
+  height: $width;
+  background: #00c1de;
+
+}
+p{
+  font-size: 10px;
+  .box1{
+    width: $width;
+    height: $width;
+    background: $color;
+  }
+  a{
+    font-size: 18px;
+  }
+}

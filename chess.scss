@@ -1,0 +1,75 @@
+$w:600px;
+$r:20px;
+$number:15;
+*{
+  list-style: none;
+}
+.box{
+  width: $w;
+  height: $w;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #ff6600;
+}
+.chess{
+  width: $r * 2;
+  height: $r * 2;
+  border-radius: 50%;
+  float: left;
+  position: relative;
+  z-index: 999;
+}
+.black{
+  background: black;
+}
+.white{
+  background: white;
+}
+.heng{
+  width: $w - $r*2;
+  height: 1px;
+  position: absolute;
+  left: $r;
+  background:#000000;
+ transform: translate3d(-300%,0,0);
+  animation: down 1s ease-in forwards;
+}
+.shu{
+  height: $w - $r*2;
+  width: 1px;
+  position: absolute;
+  top: $r;
+  background: #000000;
+  transform: translate3d(0,-300%,0);
+  animation: throgh 1s ease-in forwards;
+}
+@for $i from 1 through 15{
+  .heng:nth-of-type(#{$i}){
+    top:(2*$i - 1)*$r;
+    animation-delay: 100ms*$i;
+  }
+  .shu:nth-of-type(#{$i}){
+    left:(2*$i - 1)*$r;
+    animation-delay: 100ms*$i;
+  }
+}
+@keyframes down {
+  from{
+    transform: translate3d(-300%,0,0);
+  }
+  to{
+    transform: translate3d(0,0,0);
+     }
+}
+@keyframes throgh {
+  from{
+    transform: translate3d(-300%,0,0);
+  }
+  to{
+    transform: translate3d(0,0,0);
+  }
+}
